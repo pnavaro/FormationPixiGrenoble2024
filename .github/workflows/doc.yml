@@ -9,6 +9,11 @@ on:
         - main
     workflow_dispatch:
 
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
     build:
       runs-on: ubuntu-latest
@@ -24,11 +29,6 @@ jobs:
           uses: actions/upload-pages-artifact@v2
           with:
             path: "doc/build/html"
-
-    # Allow one concurrent deployment
-    concurrency:
-      group: "pages"
-      cancel-in-progress: true
 
     deploy:
       runs-on: ubuntu-latest
