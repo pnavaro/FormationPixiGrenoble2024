@@ -103,7 +103,7 @@ namespace splinart
     /// @param scale_value Rescale the random radius (default value is 0.00001).
     ///
     inline auto build_img(const std::array<std::size_t, 2>& img_size,
-                          std::vector<Circle>& circles,
+                          std::vector<Circle> circles,
                           std::size_t rep    = 300,
                           bool periodic      = true,
                           double scale_color = 0.005,
