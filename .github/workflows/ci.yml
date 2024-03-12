@@ -13,7 +13,7 @@ jobs:
       - name: Configure
         run: |
           cmake -S . -B .build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Debug -DBUILD_EXAMPLES=ON
-          cppcheck --disable=information --enable=all -q --project=.build/compile_commands.json --suppressions-list=.cppcheck 2> cppcheck_err.txt
+          cppcheck --enable=all -q --project=.build/compile_commands.json --suppressions-list=.cppcheck --disable=information 2> cppcheck_err.txt
         shell: pixi run bash -e {0}
       - name: Check
         run: |
