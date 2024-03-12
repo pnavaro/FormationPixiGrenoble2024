@@ -25,6 +25,11 @@ jobs:
           with:
             path: "doc/build/html"
 
+    # Allow one concurrent deployment
+    concurrency:
+      group: "pages"
+      cancel-in-progress: true
+
     deploy:
       runs-on: ubuntu-latest
       needs: build
